@@ -19,7 +19,7 @@ public class OmsPortalOrderController {
     private OmsPortalOrderService portalOrderService;
 
     /**
-     * 下单
+     * 下单,开启延迟消息
      *
      * @param orderParam
      * @return
@@ -30,6 +30,12 @@ public class OmsPortalOrderController {
         return portalOrderService.generateOrder(orderParam);
     }
 
+    /**
+     * 付款,
+     *
+     * @param orderId
+     * @return
+     */
     @RequestMapping(value = "/payOrder", method = RequestMethod.POST)
     @ResponseBody
     public Object payOrder(String orderId) {

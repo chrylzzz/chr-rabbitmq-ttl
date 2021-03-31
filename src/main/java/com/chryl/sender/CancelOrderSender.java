@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * 取消订单消息的发出者
+ * 给延迟队列发送消息:取消订单消息的发出者
  */
 @Component
 public class CancelOrderSender {

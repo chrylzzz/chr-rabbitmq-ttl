@@ -9,8 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * 监听:
- * 取消订单消息的处理者
+ * 监听:接收延迟消息,取消订单消息的处理者
  */
 @Component
 @RabbitListener(queues = "mall.order.cancel")

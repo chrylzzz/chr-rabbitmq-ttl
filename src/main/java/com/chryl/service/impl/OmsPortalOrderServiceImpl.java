@@ -45,6 +45,7 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
         //todo 执行付款操作,消费延时消息
         LOGGER.info("---------------已付款,删除延时消息");
 //        amqpTemplate.receive("mall.order.cancel.ttl", orderId);//key:queueName,val:messageId
+        //消费消息
         amqpTemplate.receive(QueueEnum.QUEUE_TTL_ORDER_CANCEL.getName(), orderId);//key:queueName,val:messageId
         LOGGER.info("付款:pay Order orderId:{}", orderId);
     }
